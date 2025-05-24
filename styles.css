@@ -314,34 +314,36 @@ section h2 {
     justify-content: center;
     align-items: flex-start;
     height: 2.2rem;
-    line-height: 1.05;
-    gap: 0.1rem;
+    line-height: 1;
+    gap: 0.02rem;
 }
 
 .header-title.header-caps {
-    font-size: 0.68rem;
+    font-size: 0.60rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #aaa;
     white-space: nowrap;
-    line-height: 1.05;
+    line-height: 1;
 }
 
 .header-right {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 1rem;
-    color: #aaa;
-    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height: 2.2rem;
 }
 
-.linkedin-link {
+.linkedin-link.header-caps {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: #aaa;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.linkedin-link:hover {
-    color: #7aa2f7;
+    white-space: nowrap;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 }
 
 .landing-hero {
@@ -586,4 +588,30 @@ main section {
 }
 .external-link:hover, .nav-secondary:hover {
     color: #888 !important;
+}
+
+.download-resume-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #aaa;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+    height: 2.2rem;
+    text-decoration: none;
+}
+
+.download-resume-btn:hover {
+    background-color: #888;
+}
+
+.download-icon {
+    width: 1.2rem;
+    height: 1.2rem;
 } 
