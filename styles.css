@@ -302,6 +302,10 @@ section h2 {
     text-transform: uppercase;
     color: #fff;
     white-space: nowrap;
+    line-height: 1;
+    height: 2.2rem;
+    display: flex;
+    align-items: center;
 }
 
 .header-title-block {
@@ -310,16 +314,18 @@ section h2 {
     justify-content: center;
     align-items: flex-start;
     height: 2.2rem;
-    line-height: 1.1;
+    line-height: 1.05;
+    gap: 0.1rem;
 }
 
 .header-title.header-caps {
-    font-size: 0.85rem;
+    font-size: 0.68rem;
     font-weight: 400;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #aaa;
     white-space: nowrap;
+    line-height: 1.05;
 }
 
 .header-right {
