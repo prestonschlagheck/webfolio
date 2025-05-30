@@ -1,46 +1,79 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const contactBtn = document.getElementById('contactBtn');
-    const contactDropdown = document.getElementById('contactDropdown');
+    // Unified modal logic
+    const modalOverlay = document.getElementById('unified-modal');
+    const modalBox = modalOverlay.querySelector('.modal-box');
+    const modalContentArea = document.getElementById('modal-content-area');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const modalLinks = document.querySelectorAll('.modal-link[data-modal]');
 
-    contactBtn.addEventListener('click', function() {
-        contactDropdown.classList.toggle('active');
-    });
+    // Modal content for each section
+    const modalContent = {
+        about: `
+            <div class="modal-header">
+                <div class="profile-circle"><img src="profile.jpeg" alt="Profile Picture"></div>
+                <h2>About</h2>
+            </div>
+            <div class="modal-body">
+                <p>I'm a Finance major and Computer Science minor at the University of South Carolina, actively involved in Sigma Phi Epsilon and Alpha Kappa Psi. With a background in the service industry and several internships, I've developed strong adaptability and problem-solving skills. I'm passionate about investments and aim to combine my interests in finance, AI, and coding to create innovative solutions in the field.</p>
+            </div>
+        `,
+        experience: `
+            <div class="modal-header"><h2>Experience</h2></div>
+            <div class="modal-body">
+                <p>Details about your work, internships, and leadership experience will go here.</p>
+            </div>
+        `,
+        projects: `
+            <div class="modal-header"><h2>Projects</h2></div>
+            <div class="modal-body">
+                <ul>
+                    <li>Project 1: Description coming soon</li>
+                    <li>Project 2: Description coming soon</li>
+                    <li>Project 3: Description coming soon</li>
+                </ul>
+            </div>
+        `,
+        certifications: `
+            <div class="modal-header"><h2>Certifications</h2></div>
+            <div class="modal-body">
+                <p>Details about your certifications will go here.</p>
+            </div>
+        `,
+        interests: `
+            <div class="modal-header"><h2>Interests</h2></div>
+            <div class="modal-body">
+                <p>Details about your interests will go here.</p>
+            </div>
+        `
+    };
 
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!contactBtn.contains(event.target) && !contactDropdown.contains(event.target)) {
-            contactDropdown.classList.remove('active');
-        }
-    });
+    function openModal(type) {
+        // Fade out close button if visible
+        closeBtn.style.opacity = 0;
+        setTimeout(() => {
+            modalContentArea.innerHTML = modalContent[type] || '';
+            modalOverlay.classList.add('active');
+            setTimeout(() => {
+                closeBtn.style.opacity = 1;
+            }, 150);
+        }, 150);
+    }
 
-    // Modal logic
-    const modalLinks = document.querySelectorAll('[data-modal]');
-    const modals = document.querySelectorAll('.modal');
-    const closeButtons = document.querySelectorAll('.modal-close');
+    function closeModal() {
+        modalOverlay.classList.remove('active');
+        closeBtn.style.opacity = 0;
+    }
 
     modalLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            const modalId = 'modal-' + link.getAttribute('data-modal');
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.classList.add('active');
-            }
+            const type = this.getAttribute('data-modal');
+            openModal(type);
         });
     });
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            btn.closest('.modal').classList.remove('active');
-        });
-    });
-
-    // Close modal when clicking outside modal-content
-    modals.forEach(modal => {
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
+    closeBtn.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) closeModal();
     });
 }); 
