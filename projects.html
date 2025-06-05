@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Preston Schlagheck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transitions.css">
+    <style>
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 48px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        
+        .back-button:hover {
+            color: var(--white);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--slate);
+            border-radius: 12px;
+            border: 1px solid var(--gray);
+            overflow: hidden;
+            position: relative;
+            height: auto;
+            min-height: 500px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--white);
+            text-align: center;
+            padding: 1.2rem;
+            margin: 0;
+            background: var(--navy);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .project-details {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .project-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            color: var(--light-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray);
+        }
+
+        .tag {
+            background: var(--accent);
+            color: var(--navy);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+
+        .show-project {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            background: var(--accent);
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 0 0 12px 12px;
+            transition: background 0.2s;
+        }
+
+        .show-project:hover {
+            background: var(--accent-hover);
+        }
+
+        .in-progress-flag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ffd700;
+            color: var(--navy);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper transition-fade">
+        <a href="index.html" class="back-button">← Back</a>
+        <h1 class="page-title">Projects</h1>
+        
+        <div class="projects-container">
+            <a href="https://www.centerintegrativeresearch.net/" target="_blank" class="project-card">
+                <img src="tians-landing.png" alt="TIANS Website Landing Page" class="project-image">
+                <h2 class="project-title">TIANS Website</h2>
+                <div class="project-details">
+                    <p class="project-description">Designed and developed the website for Trinity Institute for Applied Neuroscience and Spirituality (TIANS). Created a modern, accessible interface focusing on user experience and content presentation.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">Wix</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="project-card">
+                <span class="in-progress-flag">In Progress</span>
+                <h2 class="project-title">G.AI.NS</h2>
+                <div class="project-details">
+                    <p class="project-description">A financial dashboard powered by OpenAI that provides short-term investment recommendations based on real-time market analysis. Features AI-driven insights and personalized trading suggestions tailored to user preferences.</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">OpenAI API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="in-progress-flag">In Progress</span>
+                <h2 class="project-title">Tickr</h2>
+                <div class="project-details">
+                    <p class="project-description">A streamlined event management platform that enables organizations to generate and manage unique QR codes for member check-ins. Features customizable event creation, real-time attendance tracking, and secure member verification.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">QR API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="transitions.js"></script>
+</body>
+</html> 

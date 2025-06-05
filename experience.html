@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Preston Schlagheck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transitions.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: var(--navy);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            overflow-y: auto;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 80px;
+            min-height: 100vh;
+        }
+
+        .experience-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--gray);
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .experience-card.wide {
+            width: 100%;
+        }
+
+        .experience-card.extra-wide {
+            width: 100%;
+        }
+
+        .company-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--gray);
+            position: relative;
+        }
+
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            flex-shrink: 0;
+        }
+
+        .company-info {
+            flex: 1;
+            padding-right: 120px;
+        }
+
+        .company-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin: 0 0 0.3rem 0;
+            font-weight: 400;
+        }
+
+        .company-duration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+        }
+
+        .positions-list {
+            display: flex;
+            gap: 2rem;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .position-item {
+            position: relative;
+            padding-left: 1.5rem;
+            flex: 1;
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .position-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--white);
+            margin: 0 0 0.3rem 0;
+            font-weight: 400;
+        }
+
+        .position-duration {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .responsibilities {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .responsibilities li {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            line-height: 1.4;
+            margin-bottom: 0.4rem;
+        }
+
+        .responsibilities li:last-child {
+            margin-bottom: 0;
+        }
+
+        .position-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .position-item::after {
+            content: "";
+            position: absolute;
+            left: 3px;
+            top: 18px;
+            width: 2px;
+            height: calc(100% - 18px);
+            background: var(--gray);
+        }
+
+        .position-timeline {
+            margin-top: 1rem;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -6px;
+            top: 10px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item .position-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin: 0 0 0.3rem 0;
+        }
+
+        .timeline-item .responsibility {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .additional-info {
+            font-size: 0.85rem;
+            color: var(--light-gray);
+            margin-top: 1rem;
+            line-height: 1.4;
+            border-top: 1px solid var(--gray);
+            padding-top: 1rem;
+        }
+
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            z-index: 10;
+        }
+        
+        .back-button:hover {
+            color: var(--white);
+        }
+
+        @media screen and (max-width: 767px) {
+            .content-wrapper {
+                padding: 15px;
+                padding-top: 60px;
+            }
+
+            .experience-card {
+                padding: 1rem;
+            }
+
+            .company-header {
+                gap: 0.8rem;
+                margin-bottom: 1rem;
+                padding-bottom: 0.6rem;
+            }
+
+            .company-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .company-info {
+                padding-right: 0;
+            }
+
+            .company-name {
+                font-size: 1.2rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .company-duration {
+                position: relative;
+                font-size: 0.8rem;
+                margin-top: 0.2rem;
+            }
+
+            .positions-list {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .position-item {
+                padding-left: 1rem;
+            }
+
+            .position-title {
+                font-size: 1.1rem;
+            }
+
+            .position-duration {
+                font-size: 0.8rem;
+            }
+
+            .responsibilities li {
+                font-size: 0.8rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="experience-page">
+    <div class="content-wrapper transition-fade">
+        <a href="index.html" class="back-button">← Back</a>
+        <h1 class="page-title">Experience</h1>
+        
+        <div class="experience-container">
+            <!-- Madison Country Club -->
+            <div class="experience-card wide">
+                <div class="company-header">
+                    <img src="madison-cc-logo.jpg" alt="Madison Country Club" class="company-logo">
+                    <div class="company-info">
+                        <h2 class="company-name">Madison Country Club</h2>
+                        <p class="company-duration">3 yrs 2 mos</p>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">Member Services Associate</h3>
+                        <p class="position-duration">May 2025 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Process an average of $10,000+ in daily transactions through club POS</li>
+                            <li>Manage and schedule over 80 member tee times per day</li>
+                            <li>Serve as first point of contact for over 500 members</li>
+                        </ul>
+                    </div>
+                    <div class="position-item">
+                        <h3 class="position-title">Outside Operations Assistant</h3>
+                        <p class="position-duration">Apr 2022 - May 2025</p>
+                        <ul class="responsibilities">
+                            <li>Plan and coordinate 14 major tournaments and events annually</li>
+                            <li>Process event registrations and merchandise sales</li>
+                            <li>Manage daily tee times and maintain golf cart fleet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guilford Fund For Education -->
+            <div class="experience-card">
+                <div class="company-header">
+                    <img src="guilford-logo.png" alt="Guilford Fund For Education" class="company-logo">
+                    <div class="company-info">
+                        <h2 class="company-name">Guilford Fund For Education</h2>
+                        <p class="company-duration">3 yrs 8 mos</p>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">Web Developer</h3>
+                        <p class="position-duration">Oct 2021 - Present · 3 yrs 8 mos</p>
+                        <ul class="responsibilities">
+                            <li>Developed 30 web pages, providing website maintenance to enhance user experience and organizational outreach</li>
+                            <li>Assisted sponsor recruitment efforts, securing and retaining over 40 sponsors to ensure stable financial contributions</li>
+                            <li>Managed email campaigns and distributions, reaching 750+ subscribers with newsletters and fundraising initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trinity Institute -->
+            <div class="experience-card extra-wide">
+                <div class="company-header">
+                    <img src="trinity-logo.png" alt="Trinity Institute" class="company-logo">
+                    <div class="company-info">
+                        <h2 class="company-name">Trinity Institute for Applied Neuroscience & Spirituality</h2>
+                        <p class="company-duration">3 mos</p>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">Summer Research Intern</h3>
+                        <p class="position-duration">Jun 2021 - Aug 2021</p>
+                        <ul class="responsibilities">
+                            <li>Designed and structured the organization's website to enhance accessibility and functionality</li>
+                            <li>Conducted analysis of academic studies and created visuals to enhance research presentation</li>
+                            <li>Collaborated with researchers to format scholarly content for online publication</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alpha Kappa Psi -->
+            <div class="experience-card">
+                <div class="company-header">
+                    <img src="akpsi-logo.png" alt="Alpha Kappa Psi" class="company-logo">
+                    <div class="company-info">
+                        <h2 class="company-name">Alpha Kappa Psi</h2>
+                        <p class="company-duration">3 mos</p>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">Member</h3>
+                        <p class="position-duration">Mar 2025 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Completed 60+ professional 1-on-1's, multiple development workshops, and attended numerous networking events</li>
+                            <li>Competed in a case competition focused on the development and expansion strategy of a local technology startup</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sigma Phi Epsilon -->
+            <div class="experience-card wide">
+                <div class="company-header">
+                    <img src="sigep-logo.png" alt="Sigma Phi Epsilon" class="company-logo">
+                    <div class="company-info">
+                        <h2 class="company-name">Sigma Phi Epsilon</h2>
+                        <p class="company-duration">9 mos</p>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">ACE Chair</h3>
+                        <p class="position-duration">Oct 2024 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Direct initiatives to surpass IFC expectations and foster university relationships</li>
+                        </ul>
+                    </div>
+                    <div class="position-item">
+                        <h3 class="position-title">Graphic & Apparel Design Chair</h3>
+                        <p class="position-duration">Oct 2024 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Lead branding efforts and social media graphics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="positions-list">
+                    <div class="position-item">
+                        <h3 class="position-title">Mental Health Chair</h3>
+                        <p class="position-duration">Oct 2024 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Advocate for well-being initiatives and provide member support</li>
+                        </ul>
+                    </div>
+                    <div class="position-item">
+                        <h3 class="position-title">Member</h3>
+                        <p class="position-duration">Oct 2024 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Active in Finance, Recruitment, Programming, and Communications committees</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="transitions.js"></script>
+</body>
+</html> 
