@@ -654,12 +654,8 @@ body {
 
     /* Interests Page */
     .interests-grid {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
         max-width: 600px;
-        margin: 0 auto;
-        padding: 1rem;
     }
 
     .interest-item {
@@ -737,4 +733,13 @@ h1, h2, h3, h4, h5, h6, p, span, div, li, label, input, textarea {
     padding: 1.25rem;
     margin-bottom: 1.5rem;
     transition: all 0.2s ease;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
 } 
