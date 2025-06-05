@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Preston Schlagheck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transitions.css">
+    <style>
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 48px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        
+        .back-button:hover {
+            color: var(--white);
+        }
+
+        .certifications-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .certification-card {
+            background: var(--slate);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .cert-info {
+            flex: 1;
+            min-width: 0;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .cert-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin: 0 0 0.5rem 0;
+            font-weight: 400;
+        }
+
+        .cert-issuer-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .cert-issuer {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: var(--accent);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .cert-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            color: var(--light-gray);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .cert-id {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0;
+            font-weight: 300;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .show-credential {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            margin-top: 1rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+        }
+
+        .show-credential:hover {
+            background: var(--accent);
+            color: var(--navy);
+        }
+
+        .cert-image-container {
+            flex: 0 0 350px;
+            width: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .cert-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: contain;
+            max-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper transition-fade">
+        <a href="index.html" class="back-button">← Back</a>
+        <h1 class="page-title">Certifications</h1>
+        
+        <div class="certifications-container">
+            <div class="certification-card">
+                <div class="cert-info">
+                    <h2 class="cert-title">UBS Mergers And Acquisitions Finance Accelerator</h2>
+                    <div class="cert-issuer-container">
+                        <h3 class="cert-issuer">AmplifyME</h3>
+                        <span class="cert-date">· Issued May 2025</span>
+                    </div>
+                    <a href="https://my.amplifyme.com/certificate/69703612-2159-4444-a396-0599c8f47e25" target="_blank" class="show-credential">Show Certificate</a>
+                    <p class="cert-id">Credential ID 69703612-2159-4444-a396-0599c8f47e25</p>
+                </div>
+                <div class="cert-image-container">
+                    <img src="ubs-certificate.png" alt="UBS Certificate" class="cert-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="transitions.js"></script>
+</body>
+</html> 

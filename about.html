@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Preston Schlagheck</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="transitions.css">
+    <style>
+        .page-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 48px;
+            font-weight: 400;
+        }
+        
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+        
+        .back-button:hover {
+            color: var(--white);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            border: 2px solid var(--accent);
+            display: block;
+        }
+
+        .greeting {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.74rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .about-description {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--white);
+            margin: 2rem 0;
+            max-width: 800px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .about-content {
+                margin: 2rem auto;
+                padding: 0 1rem;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+                margin: 0 auto 1.5rem;
+            }
+
+            .greeting {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .about-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="about-page">
+    <div class="content-wrapper transition-fade">
+        <a href="index.html" class="back-button">← Back</a>
+        <div class="about-content">
+            <img src="profile.jpeg" alt="Preston Schlagheck" class="profile-image">
+            <h1 class="greeting">Hi, I'm Preston Schlagheck</h1>
+            <p class="about-text">
+                I'm a Finance major and Computer Science minor at the University of South Carolina, actively involved in Sigma Phi Epsilon and Alpha Kappa Psi. With a background in the service industry and several internships, I've developed strong adaptability and problem-solving skills. I'm passionate about investments and aim to combine my interests in finance, AI, and coding to create innovative solutions in the field.
+            </p>
+        </div>
+    </div>
+    <script src="transitions.js"></script>
+</body>
+</html> 
