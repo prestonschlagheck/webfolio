@@ -3,24 +3,6 @@
 @tailwind utilities;
 
 :root {
-<<<<<<< HEAD
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-=======
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 17, 24, 39;
   --background-end-rgb: 30, 41, 59;
@@ -53,4 +35,3 @@ body {
     @apply w-6 h-6 text-slate-400 hover:text-white transition-colors duration-300;
   }
 } 
->>>>>>> 74c1024c777f223f6fe80db36b5f921d44ed95a0
