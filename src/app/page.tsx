@@ -67,7 +67,7 @@ export default function Home() {
         <h2 className="section-title">About Me</h2>
         <div className="bg-slate-800 p-6 rounded-xl">
           <p className="text-slate-300">
-            I'm a Finance major and Computer Science minor at the University of South Carolina, actively involved in Sigma Phi Epsilon and Alpha Kappa Psi. With a background in the service industry and several internships, I've developed strong adaptability and problem-solving skills. I'm passionate about investments and aim to combine my interests in finance, AI, and coding to create innovative solutions in the field.
+            I&apos;m a Finance major and Computer Science minor at the University of South Carolina, actively involved in Sigma Phi Epsilon and Alpha Kappa Psi. With a background in the service industry and several internships, I&apos;ve developed strong adaptability and problem-solving skills. I&apos;m passionate about investments and aim to combine my interests in finance, AI, and coding to create innovative solutions in the field.
           </p>
         </div>
       </section>
