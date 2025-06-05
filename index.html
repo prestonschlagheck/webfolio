@@ -10,10 +10,14 @@
     <link rel="stylesheet" href="transitions.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        body {
+            overflow: hidden;
+        }
         .header-right {
             display: flex;
             align-items: center;
             height: 100%;
+            margin-left: -10px;
         }
 
         .contact-icons {
@@ -24,7 +28,7 @@
         }
 
         .contact-icon {
-            color: var(--text-secondary);
+            color: var(--light-gray);
             transition: all 0.2s ease;
             padding: 0.4rem;
             height: 2rem;
@@ -112,24 +116,23 @@
             <div class="header-left">
                 <span class="name header-caps">Preston Schlagheck</span>
                 <span class="header-title-block">
-                    <span class="header-title header-caps">Finance &amp; Computer Science Student</span>
-                    <span class="header-title header-caps">At the University of South Carolina</span>
+                    <span class="header-title header-caps" style="color: var(--light-gray);">Finance &amp; Computer Science Student</span>
+                    <span class="header-title header-caps" style="color: var(--light-gray);">At the University of South Carolina</span>
                 </span>
             </div>
             <div class="header-right">
                 <div class="contact-icons">
-                    <a href="mailto:prestonschlagheck@gmail.com?subject=Portfolio Contact" class="contact-icon">
+                    <a href="mailto:prestonschlagheck@gmail.com" class="contact-icon" title="Email">
                         <i class="far fa-envelope"></i>
                     </a>
-                    <a href="sms:9593330277" class="contact-icon">
-                        <i class="far fa-comment"></i>
+                    <a href="sms:9593330277" class="contact-icon" title="Text Message">
+                        <i class="far fa-message"></i>
                     </a>
-                    <a href="resume.pdf" target="_blank" class="download-resume-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                            <polyline points="7 10 12 15 17 10"/>
-                            <line x1="12" y1="15" x2="12" y2="3"/>
-                        </svg>
+                    <a href="resume.pdf" target="_blank" class="contact-icon" title="Download Resume">
+                        <i class="far fa-file-lines"></i>
+                    </a>
+                    <a href="www.linkedin.com/in/preston-schlagheck" class="contact-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
             </div>
@@ -139,22 +142,19 @@
                 <div class="nav-row">
                     <a href="about.html" class="nav-main">About</a>
                     <span class="nav-pipe">|</span>
-                    <a href="https://www.linkedin.com/in/prestonschlagheck/" target="_blank" class="external-link nav-main nav-secondary">LinkedIn</a>
-                </div>
-                <div class="nav-row">
                     <a href="experience.html" class="nav-main">Experience</a>
                     <span class="nav-pipe">|</span>
-                    <a href="https://www.instagram.com/prestonschlagheck/" target="_blank" class="external-link nav-main nav-secondary">Instagram</a>
-                </div>
-                <div class="nav-row">
                     <a href="projects.html" class="nav-main">Projects</a>
                     <span class="nav-pipe">|</span>
-                    <a href="https://github.com/prestonschlagheck" target="_blank" class="external-link nav-main nav-secondary">GitHub</a>
-                </div>
-                <div class="nav-row">
                     <a href="certifications.html" class="nav-main">Certifications</a>
                     <span class="nav-pipe">|</span>
-                    <a href="interests.html" class="nav-main nav-secondary">Interests</a>
+                    <a href="interests.html" class="nav-main">Interests</a>
+                    <span class="nav-pipe">|</span>
+                    <a href="https://www.linkedin.com/in/prestonschlagheck/" target="_blank" class="external-link nav-main nav-secondary" style="color: var(--gray);">LinkedIn</a>
+                    <span class="nav-pipe">|</span>
+                    <a href="https://github.com/prestonschlagheck" target="_blank" class="external-link nav-main nav-secondary" style="color: var(--gray);">GitHub</a>
+                    <span class="nav-pipe">|</span>
+                    <a href="https://www.instagram.com/prestonschlagheck/" target="_blank" class="external-link nav-main nav-secondary" style="color: var(--gray);">Instagram</a>
                 </div>
             </nav>
         </section>
